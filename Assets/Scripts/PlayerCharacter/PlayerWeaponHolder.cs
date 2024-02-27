@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerWeaponHolder : MonoBehaviour
 {
@@ -8,8 +9,15 @@ public class PlayerWeaponHolder : MonoBehaviour
     [SerializeField] Queue<WeaponController> weapons = new ();
     WeaponController currentWeapon;
 
+    PlayerInputActions.PlayerShootingActions playerShootingActions;
+
     private void Awake()
     {
+        playerShootingActions = GetComponentInParent<PlayerInputController>().Input.PlayerShooting;
+
+        playerShootingActions.Shoot.performed += OnShoot;
+        playerShootingActions.NextWeapon.performed += OnNextWeapon;
+
         foreach (Transform child in transform) 
         {
             if(child == transform) continue;    
@@ -20,6 +28,23 @@ public class PlayerWeaponHolder : MonoBehaviour
         }
 
         SelectNextWeapon();
+    }
+
+    private void OnDestroy()
+    {
+        playerShootingActions.Shoot.performed -= OnShoot;
+        playerShootingActions.NextWeapon.performed -= OnNextWeapon;
+    }
+
+
+    private void OnNextWeapon(InputAction.CallbackContext ctx)
+    {
+        SelectNextWeapon();
+    }
+
+    private void OnShoot(InputAction.CallbackContext ctx)
+    {
+        currentWeapon.Shoot();
     }
 
     private void SelectNextWeapon()
@@ -35,13 +60,13 @@ public class PlayerWeaponHolder : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if(Input.GetMouseButtonDown(1))
-            SelectNextWeapon();
+  //  private void Update()
+ //   {
+ //      if(Input.GetMouseButtonDown(1))
+ //          SelectNextWeapon();
 
-        if (Input.GetMouseButton(0))
-            currentWeapon.Shoot();
+ //       if (Input.GetMouseButton(0))
+ //           currentWeapon.Shoot();
 
-    }
+  //}
 }

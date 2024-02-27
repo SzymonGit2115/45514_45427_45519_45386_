@@ -369,6 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4665425346094577348}
   - component: {fileID: 541262615561720020}
+  - component: {fileID: 8331448709108462303}
   - component: {fileID: 7862026689642369860}
   - component: {fileID: 3941005779266490381}
   - component: {fileID: 8061512959622636635}
@@ -425,6 +426,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8331448709108462303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8392330755221440464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b2089efa92bad419b59df16b386abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7862026689642369860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,17 +499,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placeDistance: 3
-  prefabToPlace: {fileID: 0}
   prefabsToPlace:
   - {fileID: 0}
   - {fileID: 0}
   WeaponsController: {fileID: 5431042499026799765}
-  placeableGhostTransform: {fileID: 5164687810000521534}
   placeableGhostTransforms:
   - {fileID: 5164687810000521534}
   - {fileID: 4486459339219778907}
   correctColor: {r: 0, g: 1, b: 0, a: 1}
   incorrectColor: {r: 1, g: 0, b: 0, a: 1}
+  lowEnergyColor: {r: 0, g: 0, b: 1, a: 1}
   layerMask:
     serializedVersion: 2
     m_Bits: 200

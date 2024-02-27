@@ -2943,9 +2943,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6709757358129527965, guid: f1cda167128b6cc4b986f0539a5b93d9, type: 3}
-      propertyPath: prefabsToPlace
+      propertyPath: prefabsToPlace.Array.data[0]
       value: 
       objectReference: {fileID: 1880366121}
+    - target: {fileID: 6709757358129527965, guid: f1cda167128b6cc4b986f0539a5b93d9, type: 3}
+      propertyPath: prefabsToPlace.Array.data[1]
+      value: 
+      objectReference: {fileID: 2113366909}
+    - target: {fileID: 7862026689642369860, guid: f1cda167128b6cc4b986f0539a5b93d9, type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 2082598659}
     - target: {fileID: 8392330755221440464, guid: f1cda167128b6cc4b986f0539a5b93d9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3118,6 +3126,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4665425346094577348, guid: f1cda167128b6cc4b986f0539a5b93d9, type: 3}
   m_PrefabInstance: {fileID: 1885707113}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &2082598659 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 541262615561720020, guid: f1cda167128b6cc4b986f0539a5b93d9, type: 3}
+  m_PrefabInstance: {fileID: 1885707113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2113366909 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3173336615015276995, guid: f4d0d22c7353ec247b04dec7485ebd10, type: 3}
+  m_PrefabInstance: {fileID: 471101187}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1c7f8a7820e634ab5c8f3636fb1689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2189249070033314375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3214,6 +3238,10 @@ PrefabInstance:
       propertyPath: variableMax
       value: 
       objectReference: {fileID: 11400000, guid: 6cd744f54ffd40341be3b648cddf13a4, type: 2}
+    - target: {fileID: 3228550605109042856, guid: 970b74360c22e794b9ee835334683b90, type: 3}
+      propertyPath: m_text
+      value: click L1 to change weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 4936346012414895082, guid: 970b74360c22e794b9ee835334683b90, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3321,6 +3349,15 @@ PrefabInstance:
     - target: {fileID: 7603660826567457784, guid: 970b74360c22e794b9ee835334683b90, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611439454432974679, guid: 970b74360c22e794b9ee835334683b90, type: 3}
+      propertyPath: m_text
+      value: 'click B to enter/exit build mode
+
+        clisk R1 to place turret
+
+        click
+        L1 to change turrets'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
